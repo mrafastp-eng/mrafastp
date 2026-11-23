@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>program kalkulator</title>
+
+    <style>
+        body{
+            font-family: arial, helvetica, sans-serif;
+            background: #00ff55;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin:0;
+        }
+
+        .container{
+            background: darkseagreen;
+            padding: 25px;
+            width: 300px;
+            border-radius:10px;
+            text-align: center;
+            box-shadow: 0 3px rgb(10, 143, 114)
+        }
+
+        input,select{
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            box-sizing: border-box;
+        }
+
+        button{
+            width: 100%;
+            padding: 10px;
+            background: gray;
+            color:gold;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover{
+            background-color: yellowgreen;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>kalkulator sederhana</h2>
+        <input type="number" id="angka1" placeholder="Masukan angka pertama">
+        <input type="number" id="angka2" placeholder="Masukan angka kedua">
+
+        <select id="operator">
+            <option value="+">Penjumlahan (+)</option>
+            <option value="-">Pengurangan (-)</option>
+            <option value="*">Perkalian (*)</option>
+            <option value="/">Pembagian (/)</option>
+        </select>
+
+        <button onclick="hitung()">hitung</button>
+        <h3 id="hasil">Hasil : -</h3>
+    </div>
+
+    <script>
+        function hitung(){
+            let angka1 = Number(document.getElementById("angka1").value);
+            let angka2 = Number(document.getElementById("angka2").value);
+
+            let operator = document.getElementById("operator").value;
+            let hasil;
+
+            if (operator == "+"){
+                hasil = angka1 + angka2;
+            } else if (operator == "-") {
+                hasil = angka1 + angka2;
+            } else if (operator == "*") {
+                hasil = angka1 + angka2;
+            } else if (operator == "/"){
+                if (angka2 == 0){
+                    hasil = "Tidak bisa dibagi nol!"
+                } else {
+                    hasil = angka1 / angka2;
+                }
+            }
+
+            document.getElementById("hasil").innerHTML = "Hasil : "+ hasil;
+        }
+    </script>
+</body>
+</html>
